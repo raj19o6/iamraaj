@@ -1,0 +1,23 @@
+# Shared pieces for every *.iamraaj.in site. Loaded first (files are imported in name order),
+# so the snippets below are defined before the site files use them.
+
+(iamraaj_headers) {
+	encode zstd gzip
+	header {
+		Strict-Transport-Security "max-age=31536000"
+		X-Content-Type-Options "nosniff"
+		Referrer-Policy "strict-origin-when-cross-origin"
+		Permissions-Policy "camera=(), microphone=(), geolocation=(self)"
+		-Server
+	}
+}
+
+# A single-page app: hashed build assets are cached for a year, every other path falls back to
+# index.html so client-side routes work on reload.
+(iamraaj_spa) {
+	@hashed path /assets/*
+	header @hashed Cache-Control "public, max-age=31536000, immutable"
+	header /index.html Cache-Control "no-cache"
+	try_files {path} /index.html
+	file_server
+}

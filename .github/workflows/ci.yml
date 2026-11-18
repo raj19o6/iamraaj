@@ -1,0 +1,69 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+# One deploy at a time; a newer push replaces a deploy still waiting to start.
+concurrency:
+  group: deploy-${{ github.ref }}
+  cancel-in-progress: false
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Site checks (pages complete, local links and anchors resolve)
+        run: scripts/check.sh
+
+      - name: Caddy config is valid
+        run: |
+          printf 'import /c/*.caddy\n' > "$RUNNER_TEMP/Caddyfile"
+          docker run --rm -v "$PWD/deploy/caddy:/c:ro" -v "$RUNNER_TEMP/Caddyfile:/etc/caddy/Caddyfile:ro" \
+            caddy:2-alpine caddy validate --config /etc/caddy/Caddyfile --adapter caddyfile
+
+  # Publishes public/ to https://iamraaj.in after the checks pass, on pushes to main only.
+  # The SSH key can do one thing on the server: rsync into the site folder (rrsync, write-only),
+  # so it cannot open a shell, read files or touch anything else. Caddy files still go out with
+  # deploy/deploy.sh from a machine with full access.
+  deploy:
+    needs: check
+    if: github.event_name != 'pull_request' && github.ref == 'refs/heads/main'
+    runs-on: ubuntu-latest
+    environment:
+      name: production
+      url: https://iamraaj.in
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Load the deploy key
+        env:
+          DEPLOY_SSH_KEY: ${{ secrets.DEPLOY_SSH_KEY }}
+          DEPLOY_KNOWN_HOSTS: ${{ secrets.DEPLOY_KNOWN_HOSTS }}
+        run: |
+          install -m 700 -d ~/.ssh
+          printf '%s\n' "$DEPLOY_SSH_KEY" > ~/.ssh/deploy && chmod 600 ~/.ssh/deploy
+          printf '%s\n' "$DEPLOY_KNOWN_HOSTS" > ~/.ssh/known_hosts
+
+      - name: Upload the site
+        run: |
+          rsync -rlt --delete --chmod=D755,F644 \
+            -e "ssh -i ~/.ssh/deploy -o IdentitiesOnly=yes -o StrictHostKeyChecking=yes" \
+            public/ root@162.35.184.239:/
+
+      - name: Check the live site
+        run: |
+          for path in / /404.html /assets/site.css /assets/site.js; do
+            code=$(curl -s -o /dev/null -w '%{http_code}' "https://iamraaj.in$path")
+            echo "$path $code"; [ "$code" = 200 ] || exit 1
+          done
+          live=$(curl -s https://iamraaj.in/ | sha256sum | cut -d' ' -f1)
+          here=$(sha256sum public/index.html | cut -d' ' -f1)
+          [ "$live" = "$here" ] && echo "live page matches this commit" || { echo "live page does not match this commit" >&2; exit 1; }

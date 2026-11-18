@@ -1,0 +1,19 @@
+iamraaj.in {
+	import iamraaj_headers
+	header {
+		Content-Security-Policy "default-src 'self'; script-src 'self'; style-src 'self' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data:; connect-src 'self'; frame-ancestors 'none'; base-uri 'self'; form-action 'self'"
+		X-Frame-Options "DENY"
+	}
+	# Files keep their names between deploys, so browsers revalidate every time (a cheap 304 via ETag) and never show an old page.
+	header Cache-Control "no-cache"
+	root * /data/iamraaj/www
+	file_server
+	handle_errors 404 {
+		rewrite * /404.html
+		file_server
+	}
+}
+
+www.iamraaj.in {
+	redir https://iamraaj.in{uri} permanent
+}

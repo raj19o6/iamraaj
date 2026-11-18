@@ -1,0 +1,12 @@
+# macOS
+.DS_Store
+
+# Local tooling (Claude Code skills, design tool state)
+.claude/
+.impeccable/
+
+# Editors
+.vscode/
+.idea/
+*.swp
+.taste-skill/

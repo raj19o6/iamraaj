@@ -1,0 +1,5 @@
+# Old demo addresses from before the products were renamed. Only names that still have DNS records
+# belong here: Caddy needs DNS to get a certificate for each one.
+bbilling.iamraaj.in {
+	redir https://billing.iamraaj.in{uri} permanent
+}
