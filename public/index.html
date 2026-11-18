@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" data-type="service" data-radius="soft" data-buttons="arrow" data-motion>
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
@@ -42,185 +42,182 @@
 </script>
 <link rel="canonical" href="https://iamraaj.in/">
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
-<meta name="theme-color" content="#fafaf7" media="(prefers-color-scheme: light)">
-<meta name="theme-color" content="#0e1217" media="(prefers-color-scheme: dark)">
+<meta name="theme-color" content="#dedad3">
+<meta name="color-scheme" content="light">
+<meta name="site-kind" content="other">
+<meta name="page-type" content="service">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400..700&amp;display=swap" rel="stylesheet">
-<link rel="stylesheet" href="/assets/site.css">
-<script type="module" src="/assets/site.js"></script>
+<link rel="stylesheet" href="/assets/system.css">
+<link rel="stylesheet" href="/assets/motion/motion.css">
+<link rel="stylesheet" href="/assets/layout/layout.css">
+<link rel="stylesheet" href="/assets/page.css">
+<script src="/assets/boot.js"></script>
 </head>
 <body>
-<a class="skip-link" href="#content">Skip to content</a>
+<!-- type: service, text only (the client asked for no images: data, content and links)
+     deal: hero statement (no picture), nav nav-centre, close close-word, footer footer-columns, rhythm surface-pairs (Experience and Skills), buttons arrow, mark initial
+     palette putty-black-teal, type hanken
+     facts: from the client's CV (Resume.pdf, Nov 2026) and the apps' own repos -->
 
-<div class="layout">
-  <header class="intro">
-    <h1>Jayraj Patel</h1>
-    <p class="role">Full-stack developer</p>
-    <p class="pitch">I build complete web apps, from Go and Python APIs to React frontends, and run them in production.</p>
-    <p class="status">Senior Software Engineer at Flux Render, Vadodara</p>
-
-    <nav class="toc" aria-label="Sections">
-      <ul>
-        <li><a href="#about">About</a></li>
-        <li><a href="#experience">Experience</a></li>
-        <li><a href="#projects">Projects</a></li>
-        <li><a href="#skills">Skills</a></li>
-      </ul>
+<div class="progress" aria-hidden="true"></div>
+<header class="nav nav--centre">
+  <div class="wrap nav__bar">
+    <a class="skip-link" href="#top">Skip to content</a>
+    <a class="nav__logo" href="#top"><span class="mark mark--initial" aria-hidden="true">J</span>Jayraj Patel</a>
+    <nav class="nav__links" aria-label="Main">
+      <div class="nav__item"><a class="nav__link" href="#work">Work</a></div>
+      <div class="nav__item"><a class="nav__link" href="#experience">Experience</a></div>
+      <div class="nav__item"><a class="nav__link" href="#skills">Skills</a></div>
     </nav>
+    <div class="nav__actions">
+      <a class="btn btn--primary" href="#contact">Contact Raaj</a>
+    </div>
+    <button class="nav__toggle" type="button" aria-expanded="false" aria-label="Menu">
+      <svg width="18" height="18" viewBox="0 0 18 18" aria-hidden="true"><path d="M2 5h14M2 13h14" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+    </button>
+  </div>
+</header>
 
-    <div class="reach" id="contact">
-      <a class="btn" href="mailto:ptl.raj292@gmail.com?subject=Hello%20Raaj">Email Raaj
-        <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M1.5 6h9M7 2.5 10.5 6 7 9.5"/></svg>
-      </a>
-      <p class="address">ptl.raj292@gmail.com</p>
-      <ul class="links">
-        <li><a href="https://github.com/raj19o6">GitHub <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3.5 8.5l5-5M4.5 3.5h4v4"/></svg></a></li>
-        <li><a href="https://www.linkedin.com/in/jayraj-patel-1b49441b3">LinkedIn <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3.5 8.5l5-5M4.5 3.5h4v4"/></svg></a></li>
+<main id="top">
+  <section class="hero hero--statement" data-enter aria-labelledby="hero-h">
+    <div class="wrap"><div class="hero-text hero__in">
+      <div class="hero-top"><div class="hero-copy">
+        <p class="hero__kicker"><span class="dot" aria-hidden="true"></span>Jayraj (Raaj) Patel</p>
+        <h1 id="hero-h">Full-stack developer in Vadodara</h1>
+        <p class="hero__lead">3+ years building complete web apps: Go and Python backends, React frontends, PostgreSQL and Docker. I work on the Go backend team at Flux Render, and led a team of six at Humbingo Technologies before that.</p>
+        <div class="btn-row">
+          <a class="btn btn--primary" href="#contact">Contact Raaj<svg class="m-arrow" viewBox="0 0 12 12" aria-hidden="true"><path class="m-arrow__stem" d="M1 6h8"/><path class="m-arrow__head" d="M4.5 2.5 8 6l-3.5 3.5"/></svg></a>
+          <a class="btn btn--secondary" href="#work">See my work</a>
+        </div>
+      </div>
+      <aside class="term" aria-label="About Raaj, as a terminal session">
+        <div class="term__bar" aria-hidden="true"><i></i><i></i><i></i><span>raaj@vadodara: ~</span></div>
+        <div class="term__body">
+          <p class="term__cmd">whoami</p>
+          <p class="term__out">Jayraj Patel, full-stack developer</p>
+          <p class="term__cmd">cat now.txt</p>
+          <p class="term__out">Senior Software Engineer (Go) at Flux Render</p>
+          <p class="term__cmd">cat stack.txt</p>
+          <p class="term__out">Go &middot; Python &middot; React &middot; PostgreSQL &middot; Docker</p>
+          <p class="term__cmd">ls live-demos/</p>
+          <p class="term__out term__links"><a href="https://billing.iamraaj.in">billing</a> <a href="https://hr.iamraaj.in">hr</a> <a href="https://kavach.iamraaj.in">kavach</a></p>
+          <p class="term__cmd term__cmd--last" aria-hidden="true"><span class="term__caret"></span></p>
+        </div>
+      </aside>
+      </div>
+      <dl class="hero__facts">
+        <div><dt>Now</dt><dd>Senior Software Engineer (Go), Flux Render</dd></div>
+        <div><dt>Experience</dt><dd>3+ years, since September 2022</dd></div>
+        <div><dt>Stack</dt><dd>Go, Python, React, PostgreSQL</dd></div>
+        <div><dt>Based in</dt><dd>Vadodara, Gujarat</dd></div>
+      </dl>
+    </div></div>
+  </section>
+
+  <section class="section" id="work" aria-labelledby="work-h">
+    <div class="wrap">
+      <div class="section-head"><h2 id="work-h">Work you can open</h2></div>
+      <div class="grid grid--top">
+        <div class="span-6">
+          <h3 class="list-head">Live demos</h3>
+          <ul class="rows">
+            <li><span class="rows__name">Billing</span><p>Counter billing, GST invoices and stock for small shops. Go, PostgreSQL, React.</p><a class="rows__value link" href="https://billing.iamraaj.in">billing.iamraaj.in</a></li>
+            <li><span class="rows__name">HR</span><p>Attendance, leave and payroll with PF, ESI, professional tax and TDS. Go, PostgreSQL, React.</p><a class="rows__value link" href="https://hr.iamraaj.in">hr.iamraaj.in</a></li>
+            <li><span class="rows__name">Kavach</span><p>Compliance for DPDP, ISO 27001 and SOC 2: 51 controls, policies and evidence. Log in with demo@iamraaj.in, password kavach-demo-2026.</p><a class="rows__value link" href="https://kavach.iamraaj.in">kavach.iamraaj.in</a></li>
+          </ul>
+        </div>
+        <div class="span-6">
+          <h3 class="list-head">Client projects</h3>
+          <ul class="rows">
+            <li><span class="rows__name">Doctecq clinic system</span><p>Appointments, records and billing for more than 30 medical professionals. PHP.</p><a class="rows__value link" href="https://doctecqclinic.com">doctecqclinic.com</a></li>
+            <li><span class="rows__name">Hotel Rama Residency</span><p>Room booking with availability tracking; pages load 30% faster. React, PHP.</p><a class="rows__value link" href="https://hotelramaresidency.com">hotelramaresidency.com</a></li>
+            <li><span class="rows__name">Charotar Kisan GST invoicing</span><p>GST invoices in half the time, with finance controls per user. PHP, MySQL.</p><a class="rows__value link" href="https://sub.charotarkisan.com">sub.charotarkisan.com</a></li>
+            <li><span class="rows__name">Eoptilab inventory</span><p>10,000+ products, JWT and role-based access; 40% fewer stock errors. Django, React.</p><a class="rows__value link" href="https://webapp.eoptilab.com">webapp.eoptilab.com</a></li>
+            <li><span class="rows__name">Task management and live tracking</span><p>Task status and location over WebSockets, with role-based dashboards. Go, Gin.</p><span class="rows__value">Internal</span></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section ground-surface" id="experience" aria-labelledby="experience-h">
+    <div class="wrap">
+      <div class="section-head"><h2 id="experience-h">Experience</h2><p>Engineering work in Vadodara and Anand, Gujarat, since September 2022.</p></div>
+      <div class="grid grid--top">
+        <ul class="rows span-7">
+          <li><span class="rows__name">Senior Software Engineer, Flux Render</span><p>Backend services in Go. Built a system agent that runs as a background service, its tasks on goroutines and channels. Mentor junior engineers.</p><span class="rows__value">Sep 2026 to now</span></li>
+          <li><span class="rows__name">Software Engineer, Humbingo Technologies</span><p>Led six developers on SaaS, ERP and compliance platforms for US clients, on Go, PostgreSQL, Docker and Kubernetes.</p><span class="rows__value">Nov 2023 to Sep 2026</span></li>
+          <li><span class="rows__name">Full Stack Developer, Doctecq Technologies</span><p>A clinic management system in PHP, used by more than 30 medical professionals.</p><span class="rows__value">Sep 2022 to Feb 2023</span></li>
+        </ul>
+        <div class="facts span-4 start-9">
+          <dl>
+            <div><dt class="t-small muted">Faster backend at Humbingo</dt><dd class="t-stat" data-m-count>70%</dd></div>
+            <div><dt class="t-small muted">Shorter deploys with Jenkins CI/CD</dt><dd class="t-stat" data-m-count>60%</dd></div>
+          </dl>
+          <div>
+            <h3>Education</h3>
+            <ul>
+              <li>BE, Computer Engineering, IIET Dharmaj, 2023 to 2026, CGPA 7.89</li>
+              <li>Diploma, Computer Engineering, IIET Dharmaj, 2020 to 2023, CGPA 9.37</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section ground-surface" id="skills" aria-labelledby="skills-h">
+    <div class="wrap">
+      <div class="section-head"><h2 id="skills-h">Skills. <span class="muted">From the database to the browser.</span></h2></div>
+      <ul class="rows rows--spec">
+        <li><span class="rows__name">Languages</span><p>Go, Python, TypeScript, JavaScript, PHP</p></li>
+        <li><span class="rows__name">Backend</span><p>Go (Gin, Fiber), REST API design, WebSockets, Django REST Framework, FastAPI, Flask</p></li>
+        <li><span class="rows__name">Concurrency and systems</span><p>Goroutines, channels, background services, system agents, low-level OS access, Linux</p></li>
+        <li><span class="rows__name">Databases</span><p>PostgreSQL, MySQL, MongoDB, query optimisation, indexing</p></li>
+        <li><span class="rows__name">DevOps and cloud</span><p>Docker, Kubernetes, Jenkins, CI/CD, AWS (EC2, S3), Prometheus, Grafana, Cloudflare</p></li>
+        <li><span class="rows__name">Architecture and security</span><p>Microservices, multi-tenant SaaS, RBAC, JWT authentication, OWASP practices</p></li>
+        <li><span class="rows__name">Frontend and mobile</span><p>React, Next.js, Redux, Tailwind CSS, Flutter</p></li>
+        <li><span class="rows__name">Testing</span><p>Cypress, Playwright, Selenium</p></li>
       </ul>
     </div>
-  </header>
+  </section>
+</main>
 
-  <main class="content" id="content">
-    <section class="block about" id="about" aria-labelledby="about-h">
-      <h2 class="label" id="about-h">About</h2>
-      <p>I'm a full-stack developer with <strong>3+ years</strong> of shipping software, most of it backend systems in Go and PostgreSQL with React on the front.</p>
-      <p>Today I'm on the Go backend team at <strong>Flux Render</strong>, where I built a system agent that runs as a background service, its tasks on goroutines and channels. Before that, at <strong>Humbingo Technologies</strong>, I led a team of six developers delivering SaaS, ERP and compliance platforms for US clients, and owned projects from requirements to production support.</p>
-      <p>I also build and host my own apps. Three of them have live demos below, running on a server I set up and look after.</p>
-      <dl class="impact">
-        <div><dt>developers led at Humbingo</dt><dd>6</dd></div>
-        <div><dt>faster backend after query and service tuning</dt><dd>70%</dd></div>
-        <div><dt>less deploy time with Jenkins CI/CD</dt><dd>60%</dd></div>
-      </dl>
-    </section>
+<footer class="footer closing" id="contact" aria-labelledby="close-h">
+  <div class="wrap">
+    <div class="closing__cta close--word">
+      <div class="section-head--split">
+        <div><h2 id="close-h">Contact Raaj about a role or a project</h2><p class="t-lead">Based in Vadodara, Gujarat. First in Codethon, Code Fixing and Technical Debate competitions; guest lectures for engineering students.</p></div>
+        <div class="contact-ways">
+          <a class="btn btn--primary" href="mailto:ptl.raj292@gmail.com?subject=Hello%20Raaj">Email Raaj<svg class="m-arrow" viewBox="0 0 12 12" aria-hidden="true"><path class="m-arrow__stem" d="M1 6h8"/><path class="m-arrow__head" d="M4.5 2.5 8 6l-3.5 3.5"/></svg></a>
+          <p class="contact-address">ptl.raj292@gmail.com</p>
+        </div>
+      </div>
+      <p class="close__word" aria-hidden="true">Jayraj Patel</p>
+    </div>
+    <div class="closing__links">
+      <div class="grid">
+        <div class="span-4 stack-4">
+          <a class="nav__logo" href="#top"><span class="mark mark--initial" aria-hidden="true">J</span>Jayraj Patel</a>
+          <p class="footer__lede">Full-stack web apps in Go, React and PostgreSQL.</p>
+        </div>
+        <div class="span-2 footer__col"><h3>Work</h3><ul><li><a href="https://billing.iamraaj.in">Billing demo</a></li><li><a href="https://hr.iamraaj.in">HR demo</a></li><li><a href="https://kavach.iamraaj.in">Kavach demo</a></li></ul></div>
+        <div class="span-2 footer__col"><h3>Experience</h3><ul><li><a href="#experience">Jobs</a></li><li><a href="#experience">Education</a></li></ul></div>
+        <div class="span-2 footer__col"><h3>Skills</h3><ul><li><a href="#skills">Stack</a></li></ul></div>
+        <div class="span-2 footer__col"><h3>Contact</h3><ul><li><a href="mailto:ptl.raj292@gmail.com">Email</a></li><li><a href="https://www.linkedin.com/in/jayraj-patel-1b49441b3">LinkedIn</a></li><li><a href="https://github.com/raj19o6">GitHub</a></li></ul></div>
+      </div>
+      <div class="footer__legal">
+        <span>&copy; 2026 Jayraj Patel</span>
+        <div class="socials"></div>
+      </div>
+    </div>
+  </div>
+</footer>
 
-    <section class="block" id="experience" aria-labelledby="experience-h">
-      <h2 class="label" id="experience-h">Experience</h2>
-      <ol class="entries">
-        <li class="entry">
-          <p class="when">Sep 2026 – Now</p>
-          <div>
-            <h3>Senior Software Engineer <span class="sub">· Flux Render</span></h3>
-            <p>Backend services in Go with the core engineering team. Built a system agent that runs as a background service with low-level access to the operating system. Mentor junior engineers.</p>
-            <ul class="tags"><li>Go</li><li>Goroutines</li><li>Linux</li><li>System agents</li></ul>
-          </div>
-        </li>
-        <li class="entry">
-          <p class="when">Nov 2023 – Sep 2026</p>
-          <div>
-            <h3>Software Engineer <span class="sub">· Humbingo Technologies</span></h3>
-            <p>Led six developers on multi-tenant SaaS, ERP and compliance platforms for US clients. Go REST APIs, Dockerized microservices on Kubernetes, Jenkins pipelines and Grafana dashboards on Prometheus.</p>
-            <ul class="tags"><li>Go</li><li>Gin</li><li>PostgreSQL</li><li>Docker</li><li>Kubernetes</li><li>Jenkins</li><li>Prometheus</li><li>Grafana</li></ul>
-          </div>
-        </li>
-        <li class="entry">
-          <p class="when">Sep 2022 – Feb 2023</p>
-          <div>
-            <h3>Full Stack Developer <span class="sub">· Doctecq Technologies</span></h3>
-            <p>Designed and built a clinic management system used by more than 30 medical professionals: appointments, patient records, billing and reports. Cut response time by 20% with SQL indexing.</p>
-            <ul class="tags"><li>PHP</li><li>MySQL</li></ul>
-          </div>
-        </li>
-      </ol>
-
-      <h3 class="subhead">Education</h3>
-      <ul class="edu">
-        <li><strong>BE, Computer Engineering</strong><span>IIET Dharmaj, 2023 – 2026 · CGPA 7.89</span></li>
-        <li><strong>Diploma, Computer Engineering</strong><span>IIET Dharmaj, 2020 – 2023 · CGPA 9.37</span></li>
-      </ul>
-    </section>
-
-    <section class="block" id="projects" aria-labelledby="projects-h">
-      <h2 class="label" id="projects-h">Projects</h2>
-      <ul class="entries">
-        <li class="entry">
-          <p class="when">Live demo</p>
-          <div>
-            <h3><a href="https://billing.iamraaj.in">Billing <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3.5 8.5l5-5M4.5 3.5h4v4"/></svg></a></h3>
-            <p>Counter billing, GST invoices and stock for small shops, with a QR code on every bill. Start a demo shop from the sign-in page.</p>
-            <ul class="tags"><li>Go</li><li>PostgreSQL</li><li>React</li><li>Docker</li></ul>
-          </div>
-        </li>
-        <li class="entry">
-          <p class="when">Live demo</p>
-          <div>
-            <h3><a href="https://hr.iamraaj.in">HR <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3.5 8.5l5-5M4.5 3.5h4v4"/></svg></a></h3>
-            <p>Attendance, leave and payroll for companies of 100 to 500 people, with PF, ESI, professional tax, TDS and printable payslips.</p>
-            <ul class="tags"><li>Go</li><li>PostgreSQL</li><li>React</li><li>Tailwind CSS</li></ul>
-          </div>
-        </li>
-        <li class="entry">
-          <p class="when">Live demo</p>
-          <div>
-            <h3><a href="https://kavach.iamraaj.in">Kavach <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3.5 8.5l5-5M4.5 3.5h4v4"/></svg></a></h3>
-            <p>Compliance for India's DPDP Act, ISO 27001 and SOC 2: 51 controls with owners and status, policies, evidence and signed sign-offs.</p>
-            <p class="note">Demo login <code>demo@iamraaj.in</code> / <code>kavach-demo-2026</code></p>
-            <ul class="tags"><li>Go</li><li>React</li><li>TypeScript</li><li>PostgreSQL</li></ul>
-          </div>
-        </li>
-      </ul>
-
-      <h3 class="subhead">Client work</h3>
-      <ul class="entries">
-        <li class="entry">
-          <p class="when">Healthcare</p>
-          <div>
-            <h3><a href="https://doctecqclinic.com">Doctecq clinic system <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3.5 8.5l5-5M4.5 3.5h4v4"/></svg></a></h3>
-            <p>Appointments, patient records and billing for admin, doctor and reception roles.</p>
-            <ul class="tags"><li>PHP</li><li>MySQL</li></ul>
-          </div>
-        </li>
-        <li class="entry">
-          <p class="when">Hospitality</p>
-          <div>
-            <h3><a href="https://hotelramaresidency.com">Hotel Rama Residency <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3.5 8.5l5-5M4.5 3.5h4v4"/></svg></a></h3>
-            <p>Room booking with availability tracking and reports; pages load 30% faster.</p>
-            <ul class="tags"><li>React</li><li>PHP</li><li>MySQL</li></ul>
-          </div>
-        </li>
-        <li class="entry">
-          <p class="when">Agriculture</p>
-          <div>
-            <h3><a href="https://sub.charotarkisan.com">Charotar Kisan GST invoicing <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3.5 8.5l5-5M4.5 3.5h4v4"/></svg></a></h3>
-            <p>GST calculation and invoices with finance controls per user; invoicing takes half the time.</p>
-            <ul class="tags"><li>PHP</li><li>MySQL</li></ul>
-          </div>
-        </li>
-        <li class="entry">
-          <p class="when">Inventory</p>
-          <div>
-            <h3><a href="https://webapp.eoptilab.com">Eoptilab inventory <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3.5 8.5l5-5M4.5 3.5h4v4"/></svg></a></h3>
-            <p>10,000+ product records with JWT sign-in, role-based access and automated deploys; 40% fewer stock errors.</p>
-            <ul class="tags"><li>Django REST</li><li>React</li><li>PostgreSQL</li><li>Docker</li></ul>
-          </div>
-        </li>
-        <li class="entry">
-          <p class="when">Internal tool</p>
-          <div>
-            <h3>Task management and live tracking</h3>
-            <p>Task assignment with live status and location over WebSockets, role-based dashboards and REST APIs.</p>
-            <ul class="tags"><li>Go</li><li>Gin</li><li>WebSockets</li><li>PostgreSQL</li></ul>
-          </div>
-        </li>
-      </ul>
-    </section>
-
-    <section class="block" id="skills" aria-labelledby="skills-h">
-      <h2 class="label" id="skills-h">Skills</h2>
-      <dl class="skills">
-        <div><dt>Languages</dt><dd><ul class="tags"><li>Go</li><li>Python</li><li>TypeScript</li><li>JavaScript</li><li>PHP</li></ul></dd></div>
-        <div><dt>Backend</dt><dd><ul class="tags"><li>Gin</li><li>Fiber</li><li>REST APIs</li><li>WebSockets</li><li>Django REST</li><li>FastAPI</li><li>Flask</li></ul></dd></div>
-        <div><dt>Frontend</dt><dd><ul class="tags"><li>React</li><li>Next.js</li><li>Redux</li><li>Tailwind CSS</li><li>Flutter</li></ul></dd></div>
-        <div><dt>Data</dt><dd><ul class="tags"><li>PostgreSQL</li><li>MySQL</li><li>MongoDB</li><li>Query tuning</li><li>Indexing</li></ul></dd></div>
-        <div><dt>Infrastructure</dt><dd><ul class="tags"><li>Docker</li><li>Kubernetes</li><li>Jenkins</li><li>CI/CD</li><li>AWS EC2, S3</li><li>Prometheus</li><li>Grafana</li><li>Cloudflare</li><li>Linux</li></ul></dd></div>
-        <div><dt>Systems</dt><dd><ul class="tags"><li>Goroutines</li><li>Channels</li><li>Background services</li><li>System agents</li></ul></dd></div>
-        <div><dt>Architecture</dt><dd><ul class="tags"><li>Microservices</li><li>Multi-tenant SaaS</li><li>RBAC</li><li>JWT</li><li>OWASP</li></ul></dd></div>
-        <div><dt>Testing</dt><dd><ul class="tags"><li>Cypress</li><li>Playwright</li><li>Selenium</li></ul></dd></div>
-      </dl>
-    </section>
-
-    <p class="colophon">First place in Codethon, Code Fixing and Technical Debate competitions. I give guest lectures to engineering students and mentor interns. This site is hand-written HTML and CSS, deployed on every push to a server I run.</p>
-  </main>
-</div>
+<script type="module" src="/assets/system.js"></script>
+<script type="module" src="/assets/motion/motion.js"></script>
+<script type="module" src="/assets/page.js"></script>
 </body>
 </html>

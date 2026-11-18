@@ -60,7 +60,7 @@ jobs:
 
       - name: Check the live site
         run: |
-          for path in / /404.html /assets/site.css /assets/site.js; do
+          for path in / /404.html /assets/system.css /assets/page.css /assets/page.js; do
             code=$(curl -s -o /dev/null -w '%{http_code}' "https://iamraaj.in$path")
             echo "$path $code"; [ "$code" = 200 ] || exit 1
           done

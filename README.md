@@ -15,8 +15,10 @@ Portfolio of Raaj, senior software engineer. A static site styled like an Indian
 public/              everything served at https://iamraaj.in
   index.html         the page (static HTML, no build step)
   404.html
-  assets/site.css    the one stylesheet (light and dark)
-  assets/site.js     marks the section in view in the left menu
+  assets/system.css  the design kit (with motion/ and layout/layout.css), unchanged
+  assets/page.css    the page's palette, layout additions and motion (light theme only)
+  assets/page.js     scroll reveals and the hero terminal
+  assets/boot.js     runs before first paint (motion guards)
 deploy/
   deploy.sh          publish public/ and the Caddy files to the VPS
   demos.sh           deploy or check the live demos (Billing, HR, Kavach)
